@@ -35,4 +35,4 @@ BookReader is designed to provide a straightforward reading experience with basi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/mohmed-hussein/BookReader.git
+   git clone https://github.com/mohmed-hussein/Book-reader.git
