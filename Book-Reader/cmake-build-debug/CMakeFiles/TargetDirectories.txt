@@ -1,0 +1,3 @@
+/media/mohamed/D-disk/ReaderBook/cmake-build-debug/CMakeFiles/ReaderBook.dir
+/media/mohamed/D-disk/ReaderBook/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/mohamed/D-disk/ReaderBook/cmake-build-debug/CMakeFiles/rebuild_cache.dir
