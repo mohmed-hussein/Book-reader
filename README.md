@@ -39,4 +39,4 @@ BookReader is designed to provide a straightforward reading experience with basi
 
 
 ### UML Class Digram :
-<img src="online reader book.png" alt="Alternative text for image>
+![Class Digram](https://github.com/mohmed-hussein/Book-reader/blob/main/online%20reader%20book%20(1).png)
