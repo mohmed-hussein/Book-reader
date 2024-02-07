@@ -10,11 +10,11 @@ BookReader is a simple command-line program that allows users to log in, read bo
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 
----
+
 ## Introduction
 
 BookReader is designed to provide a straightforward reading experience with basic user authentication and book management features. Users can log in, read books, and track their reading history.
----
+
 ## Features
 
 - User authentication (Log In, Sign In)
@@ -22,7 +22,7 @@ BookReader is designed to provide a straightforward reading experience with basi
 - Read books with options to navigate between pages
 - Manage reading history
 
----
+
 ## Getting Started
 
 ### Prerequisites
