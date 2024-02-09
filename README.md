@@ -1,40 +1,46 @@
-# BookReader
+# Online Reader System
 
-BookReader is a simple command-line program that allows users to log in, read books, and manage their reading history.
+This is a simple console-based Online Reader System written in C++. The system allows users to log in, sign up, and perform various actions based on their roles (Admin or User). Users can view their profile, read books, and manage their reading history. Admins, on the other hand, can also add books to the system.
 
 ## Table of Contents
-
-- [Introduction](#introduction)
 - [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-
-
-## Introduction
-
-BookReader is designed to provide a straightforward reading experience with basic user authentication and book management features. Users can log in, read books, and track their reading history.
+- [How to Use](#how-to-use)
+- [Project Structure](#project-structure)
+- [Code Overview](#code-overview)
+- [Dependencies](#dependencies)
+- [Build and Run](#build-and-run)
 
 ## Features
 
-- User authentication (Log In, Sign In)
-- View user profile
-- Read books with options to navigate between pages
-- Manage reading history
+- User authentication (login and signup).
+- Different views for Admin and User roles.
+- Users can view their profile, read books, and manage reading history.
+- Admins can add new books to the system.
 
 
-## Getting Started
+## Project Structure
 
-### Prerequisites
+The project is organized into several classes, each handling specific functionalities:
 
-- C++ compiler
-- Git
+- `Book`: Represents a book with ISBN, title, author, and pages.
+- `BookReadingSession`: Manages the reading session for a specific book.
+- `User`: Represents a user with a username, password, name, email, and role (Admin or User).
+- `UsersManager`: Manages user-related operations such as login, signup, and user data.
+- `BooksManager`: Manages book-related operations such as adding, updating, and deleting books.
+- `UserView`: Handles the user interface for regular users.
+- `AdminView`: Handles the user interface for administrators.
+- `OnlineReaderSystem`: Orchestrates the entire system.
 
-### Installation
+## Code Overview
 
-1. Clone the repository:
+- The code is written in C++ and follows object-oriented principles.
+- Classes are used to encapsulate data and functionality, promoting modularity.
+- The system employs a simple console interface for user interaction.
+- User authentication is implemented with login and signup functionality.
+- Reading sessions are managed for individual users, allowing them to keep track of their reading history.
+- Admins have the ability to add new books to the system.
 
-   ```bash
-   git clone https://github.com/mohmed-hussein/Book-reader.git
+## Dependencies
 
+The project has no external dependencies and is written in standard C++.
 
