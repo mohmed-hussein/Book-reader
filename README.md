@@ -38,5 +38,3 @@ BookReader is designed to provide a straightforward reading experience with basi
    git clone https://github.com/mohmed-hussein/Book-reader.git
 
 
-### UML Class Digram :
-![Class Digram](https://github.com/mohmed-hussein/Book-reader/blob/main/online%20reader%20book%20(1).png)
