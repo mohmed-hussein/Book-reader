@@ -1,5 +1,3 @@
-
-
 // The system has 2 dummy users
 // Admin: username=mostafa and password=111
 // Customer: username=asmaa and password=222
@@ -10,8 +8,8 @@
 #include<sstream>
 #include<map>
 #include<set>
-#include<chrono>		// system_clock
-#include<iomanip>		// has std::put_time
+#include<chrono>		
+#include<iomanip>	
 using namespace std;
 
 ////////////////////////// Utilities //////////////////////////
@@ -36,7 +34,7 @@ int ShowReadMenu(const vector<string> &choices) {
 	return ReadInt(1, choices.size());
 }
 
-string GetCurrentTimeDate() {	// src: https://stackoverflow.com/questions/17223096/outputting-date-and-time-in-c-using-stdchrono
+string GetCurrentTimeDate() {	
 	auto now = std::chrono::system_clock::now();
 	auto in_time_t = std::chrono::system_clock::to_time_t(now);
 
@@ -120,9 +118,7 @@ public:
 
 class BookReadingSession {
 private:
-	// Using a pointer is a bad design choice here: what if the original book removed now by admin? We access garbage!
-	// A more proper way: use book isbn, and later use book manager to find the book
-	Book* book;	// Note, we did not create this pointer. Someone else should destroy
+	Book* book;	
 	int current_page;
 	string last_access_date;
 
@@ -153,7 +149,7 @@ public:
 		return last_access_date;
 	}
 
-	void ResetLastAccessDate() {	// More convenient
+	void ResetLastAccessDate() {	
 		last_access_date = GetCurrentTimeDate();
 	}
 
@@ -188,9 +184,6 @@ private:
 	vector<BookReadingSession*> reading_sessions;
 
 public:
-
-	// If you have pointers internally: start with canceling copy constructor, so that you discover any bugs due to misuse
-	// Provide it based on logic & needs
 	User(const User&) = delete;
 	void operator=(const User&) = delete;
 
@@ -276,12 +269,10 @@ public:
 	}
 
 	const vector<BookReadingSession*>& GetReadingSessions() const {
-		// Note: Although the return is const vector, but the pointer is not const, so someone can cause problems using setters on pointer
-		return reading_sessions;	// No set
+		return reading_sessions;	
 	}
 
 	BookReadingSession* AddReadingSession(Book* book) {
-		// We create pointer & later delete it
 		BookReadingSession* session = new BookReadingSession(book);
 		reading_sessions.push_back(session);
 		return session;
@@ -310,15 +301,12 @@ public:
 		FreeLoadedData();
 	}
 
-	// No sense for such a class (manager of objects) to be copyable!
-	// This is a C++ 11 feature that prevents Copy constructor and Assignment Operator (=)from being called. It delete then from the class
-	// https://ariya.io/2015/01/c-class-and-preventing-object-copy#:~:text=There%20are%20three%20ways%20to,have%20its%20instance%20copied%20around.
 	UsersManager(const UsersManager&) = delete;
 	void operator=(const UsersManager&) = delete;
 
 	void LoadDatabase() {
 		if (userame_userobject_map.size() > 0)
-			return;		// let's assume 1 run for this system only
+			return;		
 
 		cout << "UsersManager: LoadDatabase\n";
 
@@ -452,7 +440,7 @@ public:
 		FreeLoadedData();
 	}
 
-	// CRUD operations
+	
 	void AddBook(Book* book) {
 		isbn_to_book_map[book->GetIsbn()] = book;
 	}
@@ -652,13 +640,13 @@ public:
 		}
 	}
 
-	void Run() {	// only public one
+	void Run() {	
 		LoadDatabase();
 
 		while (true) {
 			users_manager->AccessSystem();	// login/signup
 
-			// Let's make for every user, its own viewer class: Remember: Single responsibility principle
+			
 			if (users_manager->GetCurrentUser()->IsLibraryAdmin()) {
 				AdminView view(*users_manager, *books_manager);
 				view.Display();
